@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Inject} from '@angular/core';
+import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {first} from "rxjs/operators";
+import {User} from "../../model/user.model";
+import {ApiService} from "../../service/api.service";
 
 @Component({
   selector: 'app-edit-employee',
@@ -7,9 +12,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditEmployeeComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  editForm: FormGroup;
+  constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
+    let userId = window.localStorage.getItem("editUserId");
+    if(!userId) {
+      alert("Invalid action.")
+      this.router.navigate(['list-user']);
+      return;
+    }
+    this.editForm = this.formBuilder.group({
+      id: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+    });
+    this.apiService.getUserById(+userId)
+      .subscribe( data => {
+        this.editForm.setValue(data.result);
+      });
+  }
+
+  onSubmit() {
+    this.apiService.updateUser(this.editForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+          if(data.statusCode === 200) {
+            alert('Employee updated successfully.');
+            this.router.navigate(['list-employee']);
+          }else {
+            alert(data.message);
+          }
+        },
+        error => {
+          alert(error);
+        });
   }
 
 }
