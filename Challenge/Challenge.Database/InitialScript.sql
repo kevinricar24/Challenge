@@ -26,4 +26,7 @@ CREATE TABLE TimeSheet(
 	)
 PRINT 'TimeSheet TABLE CREATED'
 
+insert into Employee (FirstName, LastName) values ('Kevin','Sejin')
+insert into Employee (FirstName, LastName) values ('Dario','Ricardo')
+
 END
