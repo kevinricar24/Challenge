@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Core", "Challenge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Infrastructure", "Challenge.Infrastructure\Challenge.Infrastructure.csproj", "{21A731C6-18CF-4D1F-A5DA-894CFC274664}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Web", "Challenge.Web\Challenge.Web.csproj", "{8A7C370F-2789-4496-8531-41AB03B7E368}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Challenge.Database", "Challenge.Database\Challenge.Database.sqlproj", "{ABB16023-647D-4AE1-8B9D-D446A8827993}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,16 @@ Global
 		{21A731C6-18CF-4D1F-A5DA-894CFC274664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21A731C6-18CF-4D1F-A5DA-894CFC274664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21A731C6-18CF-4D1F-A5DA-894CFC274664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7C370F-2789-4496-8531-41AB03B7E368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7C370F-2789-4496-8531-41AB03B7E368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7C370F-2789-4496-8531-41AB03B7E368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7C370F-2789-4496-8531-41AB03B7E368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB16023-647D-4AE1-8B9D-D446A8827993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB16023-647D-4AE1-8B9D-D446A8827993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB16023-647D-4AE1-8B9D-D446A8827993}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ABB16023-647D-4AE1-8B9D-D446A8827993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB16023-647D-4AE1-8B9D-D446A8827993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB16023-647D-4AE1-8B9D-D446A8827993}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
