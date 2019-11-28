@@ -6,9 +6,9 @@ namespace Challenge.Infrastructure.Context
 
     public class ChallengeContext : DbContext
     {
-        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Employee> Employee { get; set; }
 
-        public virtual DbSet<TimeSheet> TimeSheets { get; set; }
+        public virtual DbSet<TimeSheet> TimeSheet { get; set; }
 
         public ChallengeContext(DbContextOptions<ChallengeContext> options)
             : base(options)
