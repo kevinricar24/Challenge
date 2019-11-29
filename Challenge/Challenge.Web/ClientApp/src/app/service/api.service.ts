@@ -19,9 +19,7 @@ export class ApiService {
   }
 
   createUser(user: User): Observable<ApiResponse> {
-    var users = [];
-    users.push(user);
-    return this.http.post<ApiResponse>(this.baseUrl, users);
+    return this.http.post<ApiResponse>(this.baseUrl, user);
   }
 
   updateUser(user: User): Observable<ApiResponse> {

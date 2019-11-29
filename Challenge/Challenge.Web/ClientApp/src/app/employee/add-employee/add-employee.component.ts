@@ -15,7 +15,7 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
-      id: [],
+      id: [0],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
     });
@@ -23,7 +23,7 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   onSubmit() {
-    this.apiService.createUser(this.addForm.value)
+    this.apiService.updateUser(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['list-employee']);
       });

@@ -39,7 +39,6 @@ export class EditEmployeeComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          console.log(data);
           if(data.statusCode === 200) {
             alert('Employee updated successfully.');
             this.router.navigate(['list-employee']);
