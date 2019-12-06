@@ -7,7 +7,7 @@ namespace Challenge.Infrastructure.Services.Interfaces
 
     public interface IEmployeeService
     {
-        List<Employee> GetEmployees();
+        Task<IEnumerable<Employee>> GetEmployeesAsync();
         Task<Employee> GetEmployeeByIdAsync(int id);
         Task<List<Employee>> CreateEmployeeAsync(List<Employee> dataClass);
         Task<Employee> UpdateOrCreateEmployeeAsync(int id, Employee dataClass);

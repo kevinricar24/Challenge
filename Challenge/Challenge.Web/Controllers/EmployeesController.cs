@@ -22,9 +22,9 @@ namespace Challenge.Web.Controllers
         }
 
         [HttpGet]
-        public ApiResponse GetEmployees()
+        public async Task<ApiResponse> GetEmployeesAsync()
         {
-            var response = _employeeService.GetEmployees();
+            var response = await _employeeService.GetEmployeesAsync();
             return ResponseAPI(response, (int)HttpStatusCode.OK);
         }
 

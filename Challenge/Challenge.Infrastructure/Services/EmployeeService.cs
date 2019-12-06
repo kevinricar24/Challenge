@@ -25,7 +25,6 @@ namespace Challenge.Infrastructure.Services
                 await _employeeRepository.CreateAsync(employee);
             }
             return employees;
-
         }
 
         public async Task<Employee> DeleteEmployeeAsync(int id)
@@ -43,9 +42,9 @@ namespace Challenge.Infrastructure.Services
             return await _employeeRepository.GetByIdAsync(id);
         }
 
-        public List<Employee> GetEmployees()
+        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {
-            return _employeeRepository.GetAll().ToList();
+            return await _employeeRepository.GetAllAsync();
         }
 
         public async Task<Employee> UpdateOrCreateEmployeeAsync(int id, Employee dataClass)
